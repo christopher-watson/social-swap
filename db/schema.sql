@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS swap_db;
+CREATE DATABASE swap_db;
+USE swap_db;

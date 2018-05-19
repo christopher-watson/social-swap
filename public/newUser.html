@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Social Swap | User Info</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-md-2 col-sm-2 offset-4">
+        <a class="btn btn-light" href="/main">See all Users</a>
+      </div>
+      <div class="col-md-2 col-sm-2">
+        <a class="btn btn-light" href="/users">New User</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="user-container">
+          <h1>Social Swap</h1>
+          <h4>Enter Your Contact Info Here!</h4>
+          <hr>
+          <form>
+            <!-- USER NAME -->
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="nameInput">Name</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Name" required>
+              </div>
+            </div>
+            <!-- PHOTO -->
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="photoInput">Upload a Photo</label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="userPhoto">
+                  <label class="custom-file-label" for="userPhoto">Choose file</label>
+                </div>
+              </div>
+            </div>
+            <!-- USER EMAIL -->
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="emailInput">Email</label>
+                <input type="text" class="form-control" id="emailInput" placeholder="Email">
+              </div>
+            </div>
+            <!-- TWITTER -->
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="twitterInput">Twitter</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  </div>
+                  <input type="text" class="form-control" id="twitterInput" placeholder="janesmith" aria-describedby="inputGroupPrepend">
+                </div>
+              </div>
+            </div>
+            <!-- FACEBOOK -->
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="facebookInput">Facebook</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  </div>
+                  <input type="text" class="form-control" id="facebookInput" placeholder="janesmith" aria-describedby="inputGroupPrepend">
+                </div>
+              </div>
+            </div>
+            <!-- LINKED IN -->
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="linkedInput">Linked In</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  </div>
+                  <input type="text" class="form-control" id="linkedInput" placeholder="janesmith" aria-describedby="inputGroupPrepend">
+                </div>
+              </div>
+            </div>
+            <!-- GITHUB -->
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="githubInput">Github</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  </div>
+                  <input type="text" class="form-control" id="githubInput" placeholder="janesmith" aria-describedby="inputGroupPrepend">
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary mt-2" type="submit">Submit form</button>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+    </d>
+    <!-- Custom Script -->
+    <script src="js/user.js" type="text/javascript"></script>
+</body>
+
+</html>
