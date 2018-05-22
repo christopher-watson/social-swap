@@ -1,13 +1,15 @@
 module.exports = function (sequelize, DataTypes) {
-  var Event = sequelize.define("Event", {
+  var Events = sequelize.define("Events", {
     code: DataTypes.STRING
+  },{
+    freezeTableName: true
   });
 
-  Event.associate = function (models) {
-    Event.hasMany(models.Users, {
+  Events.associate = function (models) {
+    Events.hasMany(models.Users, {
       onDelete: "cascade"
     });
   };
 
-  return Event;
+  return Events;
 };
