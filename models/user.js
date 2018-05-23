@@ -23,10 +23,10 @@ module.exports = function (sequelize, DataTypes) {
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isEmail: true,
-      }
+      allowNull: false
+      // validate: {
+      //   isEmail: true,
+      // }
     },
     twitter: {
       type: DataTypes.STRING,

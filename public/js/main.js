@@ -28,17 +28,19 @@ $(document).ready(function () {
       code: eventCode
     });
 
+    $("#newEventCode").text(eventCode);
+
     $.confirm({
       title: 'Event ID:',
       content: eventCode,
       theme: 'modern',
       buttons: {
         confirm: {
-          text: 'Ok',
+          text: 'View Event',
           btnClass: 'btn-blue',
           keys: ['enter'],
           action: function () {
-            window.location.href = `/event/?=${eventCode}`;
+            window.location.href = `/events/?=${eventCode}`;
           }
         },
         cancel: {
@@ -50,7 +52,6 @@ $(document).ready(function () {
     console.log(eventCode);
   }
 
-
   //takes user event code input and sends user to event page
   function handleJoinEventSubmit(event) {
     event.preventDefault();
@@ -60,7 +61,6 @@ $(document).ready(function () {
     }
 
     searchEvent(eventInput);
-
   }
 
   function newEvent(eventData) {
@@ -78,7 +78,7 @@ $(document).ready(function () {
           btnClass: 'btn-blue',
           keys: ['enter'],
           action: function () {
-            window.location.href = `/users/?event=${eventInput.val().trim().toUpperCase()}`;
+            window.location.href = `/users/?events=${eventInput.val().trim().toUpperCase()}`;
           }
         },
         cancel: {
@@ -92,7 +92,7 @@ $(document).ready(function () {
   function errorConfirm() {
     $.confirm({
       title: 'Error',
-      content: 'This Event does not exist. Join a different group',
+      content: 'This Event does not exist',
       theme: 'modern',
       buttons: {
         confirm: {
@@ -119,5 +119,6 @@ $(document).ready(function () {
       }
     })
   }
+
 
 });

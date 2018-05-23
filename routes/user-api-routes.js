@@ -11,7 +11,7 @@ module.exports = function (app) {
 
     db.Users.findAll({
       where: query,
-      include: [db.Users]
+      include: [db.Events]
     }).then(function (dbUsers) {
       res.json(dbUsers);
     });
@@ -22,8 +22,8 @@ module.exports = function (app) {
     db.Users.findOne({
       where: {
         name: req.params.name
-      }
-      // include: [db.Users]
+      },
+      include: [db.Events]
     }).then(function (dbUsers) {
       console.log(dbUsers);
       res.json(dbUsers);

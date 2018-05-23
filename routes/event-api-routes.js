@@ -22,6 +22,19 @@ module.exports = function (app) {
     });
   });
 
+  // event page ?????
+  app.get("/events/:id", function (req, res) {
+    db.Events.findAll({
+      where: {
+        code: req.params.id
+      },
+      include: [db.Users]
+    }).then(function (dbUsers) {
+      console.log(dbUsers);
+      res.json(dbUsers);
+    });
+  });
+
   // delete event
   app.delete("/api/events/:id", function (req, res) {
     db.Users.destroy({

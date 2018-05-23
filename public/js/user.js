@@ -16,7 +16,7 @@ $(document).ready(function () {
 
   $(document).on("click", "#contactInfoSubmit", handleUserSubmit);
 
-  if (url.indexOf("?event=") !== -1) {
+  if (url.indexOf("?events=") !== -1) {
     eventCode = url.split("=")[1];
   }
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
     });
 
     $.confirm({
-      title: 'Done?',
+      title: 'Done',
       content: 'Would you like to continue?',
       theme: 'modern',
       buttons: {
@@ -60,7 +60,7 @@ $(document).ready(function () {
           btnClass: 'btn-blue',
           keys: ['enter'],
           action: function () {
-            window.location.href = `/event/?=${eventCode.toUpperCase()}`;
+            window.location.href = `/events/?=${eventCode}`;
           }
         },
         cancel: {
