@@ -28,6 +28,10 @@ module.exports = function (sequelize, DataTypes) {
       //   isEmail: true,
       // }
     },
+    phone: {
+      type:DataTypes.STRING,
+      allowNull: true
+    },
     twitter: {
       type: DataTypes.STRING,
       allowNull: true,

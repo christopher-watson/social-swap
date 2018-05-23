@@ -1,7 +1,30 @@
 .root{
-
+  --info: #3498DB;
 }
 
-*{
+.header-container{
+  /* height: 30vh;
+  padding-top: 5%; */
+}
+
+.card{
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.links{
   color: black;
+}
+
+.links:hover{
+  color: var(--info);
+}
+
+.contact-div{
+  display: grid;
+  grid-template-columns: min-content max-content;
+}
+
+.contact-img{
+  -right: 20px;
 }

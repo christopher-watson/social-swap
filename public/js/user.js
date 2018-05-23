@@ -44,6 +44,7 @@ $(document).ready(function () {
       name: nameInput.val().trim(),
       photo: userPhoto.val().trim(),
       email: emailInput.val().trim(),
+      phone: phoneInput.val().trim(),
       twitter: twitterInput.val().trim(),
       fb: facebookInput.val().trim(),
       linked_in: linkedInput.val().trim(),
