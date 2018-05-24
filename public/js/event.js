@@ -1,8 +1,11 @@
 $(document).ready(function () {
 
+  
   var url = window.location.search;
   var eventCode;
   var userId;
+  
+  $(document).on("click", "#homeButton", goHome);
 
   // display event code
   if (url.indexOf("?=") !== -1) {
@@ -89,7 +92,7 @@ $(document).ready(function () {
     newUserName.text(user.name);
     newUserEmail.text(user.email);
     newUserPhone.text(user.phone);
-    if (user.twitter.length > 0){
+    if (user.twitter.length > 0) {
       newUserTwitterDiv.append(twitterImg);
     }
     newUserTwitter.text(`@${user.twitter}`);
@@ -97,8 +100,8 @@ $(document).ready(function () {
     newUserTwitter.attr("target", "_blank");
     newUserTwitter.addClass("links");
     newUserTwitterDiv.append(newUserTwitter);
-    
-    if (user.fb.length > 0){
+
+    if (user.fb.length > 0) {
       newUserfbDiv.append(fbImg);
     }
     newUserfb.text(user.fb);
@@ -107,7 +110,7 @@ $(document).ready(function () {
     newUserfb.addClass("links");
     newUserfbDiv.append(newUserfb);
 
-    if (user.linked_in.length > 0){
+    if (user.linked_in.length > 0) {
       newUserLinkedInDiv.append(linkedInImg);
     }
     newUserLinkedIn.text(user.linked_in);
@@ -116,7 +119,7 @@ $(document).ready(function () {
     newUserLinkedIn.addClass("links");
     newUserLinkedInDiv.append(newUserLinkedIn);
 
-    if (user.github.length > 0){
+    if (user.github.length > 0) {
       newUserGitHubDiv.append(gitHubImg);
     }
     newUserGitHub.text(user.github);
@@ -139,6 +142,10 @@ $(document).ready(function () {
     // return newUserCard;
   }
 
+  function goHome(){
+    window.location.href = "/"
+  }
+  
   // button links will eventually export user information to .vcf
 
 });

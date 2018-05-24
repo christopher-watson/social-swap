@@ -4,6 +4,8 @@ var eventCode;
 $(document).ready(function () {
   $(document).on("click", "#newEventButton", handleNewEventSubmit);
   $(document).on("click", "#joinEventButton", handleJoinEventSubmit);
+  $(document).on("click", "#homeButton", goHome);
+
 
   // grab user input
   var eventInput = $("#eventInput");
@@ -120,5 +122,8 @@ $(document).ready(function () {
     })
   }
 
+  function goHome(){
+    window.location.href = "/"
+  }
 
 });

@@ -15,6 +15,8 @@ $(document).ready(function () {
   var githubInput = $("#githubInput");
 
   $(document).on("click", "#contactInfoSubmit", handleUserSubmit);
+  $(document).on("click", "#homeButton", goHome);
+  $(document).on("click", "#eventButton", skip);
 
   if (url.indexOf("?events=") !== -1) {
     eventCode = url.split("=")[1];
@@ -74,6 +76,14 @@ $(document).ready(function () {
 
   function newUser(userData) {
     $.post("/api/users", userData);
+  }
+
+  function goHome(){
+    window.location.href = "/";
+  }
+
+  function skip(){
+    window.location.href = `/events/?=${eventCode}`;
   }
 
   // function uploadPhoto(img) {
