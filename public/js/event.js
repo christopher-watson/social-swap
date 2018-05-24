@@ -1,3 +1,6 @@
+var momentYear = moment().year();
+$('.moment-year').html(momentYear);
+
 $(document).ready(function () {
 
   
@@ -12,14 +15,9 @@ $(document).ready(function () {
     eventCode = url.split("=")[1];
     console.log(eventCode);
     $("#event-id-span").text(eventCode);
-    // displayUsers();
     grabUsers();
   } else if (url.indexOf("?=") == -1) {
     // displayEmpty();
-  }
-
-  function displayUsers() {
-
   }
 
   // get all users from db
@@ -46,20 +44,17 @@ $(document).ready(function () {
     // header
     var newUserCardHeading = $("<div>");
     newUserCardHeading.addClass("card-header bg-info");
-    // var deleteBtn = $("<button>");
-    // deleteBtn.text("x");
-    // deleteBtn.addClass("delete btn btn-danger");
-    // var editBtn = $("<button>");
-    // editBtn.text("EDIT");
-    // editBtn.addClass("edit btn btn-info");
+
     // card body 
     var newUserCardBody = $("<div>");
-    newUserCardBody.addClass("card-body");
+    var newUserHeaderDiv = $("<div>");
+    var newUserHeaderInfo = $("<div>");
+    var newUserPhotoDiv = $("<div>");
     var newUserPhoto = $("<img>")
-    // photo stuff
-    var newUserName = $("<h2>");
-    var newUserEmail = $("<h4>");
+    var newUserName = $("<h3>");
+    var newUserEmail = $("<h5>");
     var newUserPhone = $("<p>");
+    var newUserSocialDiv = $("<div>");
     var newUserTwitterDiv = $("<div>");
     var newUserTwitter = $("<a>");
     var newUserfbDiv = $("<div>");
@@ -70,10 +65,15 @@ $(document).ready(function () {
     var newUserGitHub = $("<a>");
 
     // add classes
-    newUserTwitterDiv.addClass("contact-div");
-    newUserfbDiv.addClass("contact-div");
-    newUserLinkedInDiv.addClass("contact-div");
-    newUserGitHubDiv.addClass("contact-div");
+    newUserCardBody.addClass("card-body");
+    newUserHeaderDiv.addClass("header-div");
+    newUserHeaderInfo.addClass("header-info");
+    newUserPhotoDiv.addClass("user-photo-div")
+    newUserSocialDiv.addClass("social-div");
+    newUserTwitterDiv.addClass("social-inner twitter");
+    newUserfbDiv.addClass("social-inner fb");
+    newUserLinkedInDiv.addClass("social-inner linkedin");
+    newUserGitHubDiv.addClass("social-inner github");
 
     // social media images
     var twitterImg = $("<div>");
@@ -89,13 +89,25 @@ $(document).ready(function () {
     gitHubImg.addClass("contact-image mr-2");
     gitHubImg.html(`<i class="fab fa-github"></i>`);
 
+    // photo
+    newUserPhoto.attr("src", "./../img/cw-round2.png");
+    newUserPhoto.addClass("user-photo");
     newUserName.text(user.name);
     newUserEmail.text(user.email);
     newUserPhone.text(user.phone);
+    newUserPhotoDiv.append(newUserPhoto);
+    newUserHeaderInfo.append(newUserName);
+    newUserHeaderInfo.append(newUserEmail);
+    newUserHeaderInfo.append(newUserPhone);
+    newUserHeaderDiv.append(newUserPhotoDiv);
+    newUserHeaderDiv.append(newUserHeaderInfo);
+    
+    // rest of card body
+
     if (user.twitter.length > 0) {
       newUserTwitterDiv.append(twitterImg);
+      newUserTwitter.text(`@${user.twitter}`);
     }
-    newUserTwitter.text(`@${user.twitter}`);
     newUserTwitter.attr("href", `http://www.twitter.com/${user.twitter}`);
     newUserTwitter.attr("target", "_blank");
     newUserTwitter.addClass("links");
@@ -128,24 +140,29 @@ $(document).ready(function () {
     newUserGitHub.addClass("links");
     newUserGitHubDiv.append(newUserGitHub);
 
+    // export button
+    var exportButton = $("<button>");
+    exportButton.addClass("btn btn-danger export-button");
+    exportButton.html(`Export  <i class="fas fa-download"></i>`);
+
     // append everything
-    newUserCardBody.append(newUserName);
-    newUserCardBody.append(newUserEmail);
-    newUserCardBody.append(newUserPhone);
-    newUserCardBody.append(newUserTwitterDiv);
-    newUserCardBody.append(newUserfbDiv);
-    newUserCardBody.append(newUserLinkedInDiv);
-    newUserCardBody.append(newUserGitHubDiv);
+    newUserSocialDiv.append(newUserTwitterDiv);
+    newUserSocialDiv.append(newUserfbDiv);
+    newUserSocialDiv.append(newUserLinkedInDiv);
+    newUserSocialDiv.append(newUserGitHubDiv);
+    newUserSocialDiv.append(exportButton);
+    newUserCardBody.append(newUserHeaderDiv);
+    newUserCardBody.append(newUserSocialDiv);
+    // newUserCardBody.append(exportButton);
     newUserCard.append(newUserCardHeading);
     newUserCard.append(newUserCardBody);
     $(".user-container").append(newUserCard);
-    // return newUserCard;
   }
 
   function goHome(){
     window.location.href = "/"
   }
-  
+
   // button links will eventually export user information to .vcf
 
 });

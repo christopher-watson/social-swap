@@ -1,35 +1,122 @@
-.root{
+.root {
   --info: #3498DB;
+  --black: #161718;
+  --white: #FFFFFF;
+  --opaque: rgba(255, 255, 255, 1);
 }
+
+hr{
+  opacity: 0;
+}
+
+footer{
+  display: none;
+}
+
+#main-body {
+  background-image: url("./../img/wood.jpg");
+  background-size: fit;
+}
+
+#user-body {
+  background-image: url("./../img/clock.jpg");
+  background-size: fit;
+  background-position: center center;
+}
+
+#event-body {
+  background-image: url("./../img/office.jpg");
+  background-size: stretch;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
 
 .header-container{
-  /* height: 30vh;
-  padding-top: 5%; */
+  background-color: var(--white);
+  border-radius: 25px;
 }
 
-.card{
+.content-row{
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.card-row{
+  background-color: rgba(255, 255, 255, .4);
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.card {
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 5px 10px 5px;
 }
 
-.links{
+.links {
   color: black;
 }
 
-.links:hover{
+.links:hover {
   color: var(--info);
 }
 
-.contact-div{
+.social-div {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  grid-template-rows: min-content;
+  grid-template-areas: "twitter . button" "fb . button" "linkedin . button" "github . button"
+}
+
+.social-inner {
   display: grid;
   grid-template-columns: min-content max-content;
 }
 
-.contact-img{
-  -right: 20px;
+.twitter {
+  grid-area: twitter;
 }
 
-.top-button{
+.fb {
+  grid-area: fb;
+}
+
+.linkedin {
+  grid-area: linkedin;
+}
+
+.github {
+  grid-area: github;
+}
+
+.header-div {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: repeat(4, min-content);
+  margin-bottom: 10px;
+}
+
+.top-button {
   font-size: 25px;
   padding: 0 25px;
+}
+
+.user-photo {
+  height: 114px;
+  margin-right: 10px;
+}
+
+.user-photo-div {
+  align-self: center;
+}
+
+.header-info {
+  margin-top: 10px;
+}
+
+.export-button {
+  grid-area: button;
+  height: min-content;
+  align-self: center;
 }

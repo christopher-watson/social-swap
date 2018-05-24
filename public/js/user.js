@@ -1,3 +1,6 @@
+var momentYear = moment().year();
+$('.moment-year').html(momentYear);
+
 // var cloudinary = require("cloudinary").v2;
 // var Event = require('./main');
 

@@ -1,3 +1,6 @@
+var momentYear = moment().year();
+$('.moment-year').html(momentYear);
+
 var eventCode;
 // var searchedEvent;
 
@@ -122,7 +125,7 @@ $(document).ready(function () {
     })
   }
 
-  function goHome(){
+  function goHome() {
     window.location.href = "/"
   }
 
