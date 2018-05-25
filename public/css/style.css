@@ -15,22 +15,35 @@ footer{
 
 #main-body {
   background-image: url("./../img/wood.jpg");
-  background-size: fit;
+  background-size: cover;
 }
 
 #user-body {
   background-image: url("./../img/clock.jpg");
-  background-size: fit;
-  background-position: center center;
+  background-size: cover;
+  background-position: top center;
 }
 
 #event-body {
   background-image: url("./../img/office.jpg");
-  background-size: stretch;
+  background-size: cover;
   background-position: center center;
   background-attachment: fixed;
 }
 
+.swap{
+  padding-top: 10px;
+  font-family: 'Bowlby One', sans-serif;
+  text-transform: capitalize;
+}
+
+.shop{
+  font-family: 'Abril Fatface', cursive;
+}
+
+.page-text{
+  font-family: 'Abril Fatface', cursive;
+}
 
 .header-container{
   background-color: var(--white);
